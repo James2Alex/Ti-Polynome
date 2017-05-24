@@ -1,0 +1,205 @@
+EffÉcran
+Disp "Le programme"
+Disp "n'est pas a jour"
+Disp "Tester la"
+Disp "compatibilité?"
+Disp "0:Non 1:Oui"
+Input A
+If A=1
+Then:Output(5,1,"              "):Output(6,1,versChaîne(0)+"K La calculette est")
+Output(7,1,"compatible mettez")
+Output(8,1,"le programme à jour")
+Pause 
+End
+EffÉcran
+
+Lbl SQ
+0→I:DelVar [E]:DelVar [D]:DelVar ⌊COEF(I):DelVar Chn1:DelVar Chn2:0→dim(⌊COEF)
+ln(5)→V
+ln(6)→H
+Disp "Entrez coeffs"
+Disp "alpha+V:valider"
+Disp "alpha+H:aide"
+Disp "!COEFFS ENTIERS"
+Lbl IN
+I+1→I
+Input A
+If A≠ln(6)
+Then
+If A=ln(5) et dim(⌊COEF)>0
+Then:Goto MC
+Else:If A=ln(5) et dim(⌊COEF)=0
+Goto OV
+End
+A→⌊COEF(I)
+Goto IN
+
+
+Else
+EffÉcran
+Disp "Entrez les"
+Disp "coefficients"
+Disp "dans l'ordre"
+Disp "Appuyez sur"
+Disp "entrée après"
+Disp "chaque coeff"
+Disp "Terminez par V"
+Pause 
+EffÉcran
+Disp "Exemple:"
+Disp "Pour3x²+2 entrez"
+Disp "3 puis 0 puis 2"
+Disp "puis V"
+Disp "comme pour"
+Disp "3x²+0x+2"
+Pause 
+EffÉcran
+Disp "Le programme"
+Disp "n'est pas à jour"
+Disp "Il n'accepte que"
+Disp "des coefficients"
+Disp "entiers"
+Pause 
+EffÉcran
+Disp "Si le test"
+Disp "de compatibilité"
+Disp "réussit"
+Disp "Mettez le"
+Disp "programme à jour"
+Disp "Sinon Mettez la"
+Disp "TI-83 a jour"
+Pause 
+EffÉcran
+Goto SQ
+End
+
+
+Lbl MC
+Listematr(⌊COEF,[E])
+{dim(⌊COEF),2}→dim([E])
+If dim(⌊COEF)>1
+Then
+{dim(⌊COEF)-1,2}→dim([D])
+Else:{1,2}→dim([D])
+End
+
+For(I,1,dim(⌊COEF))
+dim(⌊COEF)-I→[E](I,2)
+End
+
+For(I,1,dim(⌊COEF)-1)
+[E](I,1)*[E](I,2)→[D](I,1)
+[E](I,2)-1→[D](I,2)
+End
+
+"0"→Chn1:For(I,1,dim(⌊COEF)-1)
+{1,2}→⌊CST
+{[E](I,1),[E](I,1)}→⌊STL
+RégLin(a+bx) ⌊CST,⌊STL,Y₀
+ÉquChaîne(Y₀,Chn3)
+DelVar Y₀
+EffListe ⌊CST,⌊STL
+sousch(Chn3,1,longueur(Chn3)-3)→Chn3
+
+{1,2}→⌊CST
+{[E](I,2),[E](I,2)}→⌊STL
+RégLin(a+bx) ⌊CST,⌊STL,Y₀
+ÉquChaîne(Y₀,Chn4)
+DelVar Y₀
+EffListe ⌊CST,⌊STL
+sousch(Chn4,1,longueur(Chn4)-3)→Chn4
+
+Chn1+"+"+Chn3+"X^("+Chn4+")"→Chn1:End
+{1,2}→⌊CST
+{[E](dim(⌊COEF),1),[E](dim(⌊COEF),1)}→⌊STL
+RégLin(a+bx) ⌊CST,⌊STL,Y₀
+ÉquChaîne(Y₀,Chn3)
+DelVar Y₀
+EffListe ⌊CST,⌊STL
+sousch(Chn3,1,longueur(Chn3)-3)→Chn3
+Chn1+"+"+Chn3→Chn1
+
+"0"→Chn2:
+If dim(⌊COEF)>1
+Then
+For(I,1,dim(⌊COEF)-2)
+
+{1,2}→⌊CST
+{[D](I,1),[D](I,1)}→⌊STL
+RégLin(a+bx) ⌊CST,⌊STL,Y₀
+ÉquChaîne(Y₀,Chn3)
+DelVar Y₀
+EffListe ⌊CST,⌊STL
+sousch(Chn3,1,longueur(Chn3)-3)→Chn3
+
+{1,2}→⌊CST
+{[D](I,2),[D](I,2)}→⌊STL
+RégLin(a+bx) ⌊CST,⌊STL,Y₀
+ÉquChaîne(Y₀,Chn4)
+DelVar Y₀
+EffListe ⌊CST,⌊STL
+sousch(Chn4,1,longueur(Chn4)-3)→Chn4
+
+Chn2+"+"+Chn3+"X^("+Chn4+")"→Chn2:End
+
+
+{1,2}→⌊CST
+{[D](dim(⌊COEF)-1,1),[D](dim(⌊COEF)-1,1)}→⌊STL
+RégLin(a+bx) ⌊CST,⌊STL,Y₀
+ÉquChaîne(Y₀,Chn3)
+DelVar Y₀
+EffListe ⌊CST,⌊STL
+sousch(Chn3,1,longueur(Chn3)-3)→Chn3
+Chn2+"+"+Chn3→Chn2
+
+End
+
+ChaîneÉqu(Chn1,Y₁)
+ChaîneÉqu(Chn2,Y₂)
+
+
+If dim(⌊COEF)=3
+Then:1→H
+[E](1,1)→A:[E](2,1)→B:[E](3,1)→C
+Else:If dim(⌊COEF)=4
+Then:2→H
+[D](1,1)→A:[D](2,1)→B:[D](3,1)→C
+Else:­1→H:End:End
+
+0→E:0→F:0→D:0→I:0→J
+
+If H≠­1
+Then
+­B/(2A)→E
+AE²+BE+C→F
+B²-4AC→D
+If D≥0
+Then
+(­B-√(D))/(2A)→I
+(­B+√(D))/(2A)→J
+End:End
+
+
+EffÉcran
+Output(1,1,"fx:"+Chn1)
+If H=1
+Then:Output(2,1,"α:"):Output(2,3,E):Output(2,9,"β:"):Output(2,12,F)
+Output(3,1,":"):Output(3,3,D):Output(3,8,"x₁:"):Output(3,11,I):Output(4,4,"x₂:"):Output(4,7,J)
+Else:Output(2,1,"Poly de degré ":Output(2,14,dim(⌊COEF)-1)
+End
+
+Output(5,1,"f':"+Chn2)
+If H=2
+Then:Output(6,1,"α:"):Output(6,3,E):Output(6,9,"β:"):Output(6,12,F)
+Output(7,1,":"):Output(7,3,D):Output(7,8,"x₁:"):Output(7,11,I):Output(8,1,"x₂:"):Output(8,4,J)
+Else:If dim(⌊COEF)>1
+Then:Output(8,1,"Poly de degré "):Output(8,14,dim(⌊COEF)-2)
+Else:Output(8,1,"Poly de degré 0")
+End:End
+Pause :EffÉcran
+
+Lbl OV
+If dim(⌊COEF)=0
+Then:0→I:DelVar [E]:DelVar [D]:DelVar ⌊COEF(I):DelVar Chn1:DelVar Chn2:0→E:0→F:0→D:0→I:0→J:0→A:0→B:0→C:0→V:0→H
+Disp "Progvar reset"
+End
