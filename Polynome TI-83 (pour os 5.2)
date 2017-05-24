@@ -1,0 +1,117 @@
+EffÉcran
+Lbl SQ
+0→I:DelVar [E]:DelVar [D]:DelVar ⌊COEF(I):DelVar Chn1:DelVar Chn2:0→dim(⌊COEF)
+ln(5)→V
+ln(6)→H
+Disp "Entrez les coefficients"
+Disp "alpha+V pour valider"
+Disp "alpha+H pour ouvrir l'aide"
+Lbl IN
+I+1→I
+Input A
+If A≠ln(6)
+Then
+If A=ln(5) et dim(⌊COEF)>0
+Then:Goto MC
+Else:If A=ln(5) et dim(⌊COEF)=0
+Goto OV
+End
+A→⌊COEF(I)
+Goto IN
+Lbl MC
+Else
+EffÉcran
+Disp "Entrez les coefficients"
+Disp " dans l'ordre"
+Disp "Appuyez sur entrée après"
+Disp " chaque coefficient"
+Disp "Terminez en entrant V","","",""
+Disp "            entrer:p.suivant"
+Pause 
+EffÉcran
+Disp "Pour 3x²+2 entrez"
+Disp " 3 puis 0 puis 2 puis V",""
+Disp "Le 0 fait la différence"
+Disp " entre 3x²+0x+2 et 3x+2","","",""
+Disp "          entrer:continuer"
+Pause 
+EffÉcran
+Goto SQ
+End
+
+Listematr(⌊COEF,[E])
+{dim(⌊COEF),2}→dim([E])
+If dim(⌊COEF)>1
+Then
+{dim(⌊COEF)-1,2}→dim([D])
+Else:{1,2}→dim([D])
+End
+
+For(I,1,dim(⌊COEF))
+dim(⌊COEF)-I→[E](I,2)
+End
+
+For(I,1,dim(⌊COEF)-1)
+[E](I,1)*[E](I,2)→[D](I,1)
+[E](I,2)-1→[D](I,2)
+End
+
+"0"→Chn1:For(I,1,dim(⌊COEF)-1)
+Chn1+"+"+versChaîne([E](I,1))+"X^("+versChaîne([E](I,2))+")"→Chn1:End:Chn1+"+"+versChaîne([E](dim(⌊COEF),1)→Chn1
+
+"0"→Chn2:
+If dim(⌊COEF)>1
+Then
+For(I,1,dim(⌊COEF)-2)
+Chn2+"+"+versChaîne([D](I,1))+"X^("+versChaîne([D](I,2))+")"→Chn2:End:Chn2+"+"+versChaîne([D](dim(⌊COEF)-1,1)→Chn2
+End
+
+ChaîneÉqu(Chn1,Y₁)
+ChaîneÉqu(Chn2,Y₂)
+
+
+If dim(⌊COEF)=3
+Then:1→H
+[E](1,1)→A:[E](2,1)→B:[E](3,1)→C
+Else:If dim(⌊COEF)=4
+Then:2→H
+[D](1,1)→A:[D](2,1)→B:[D](3,1)→C
+Else:­1→H:End:End
+
+0→E:0→F:0→D:0→I:0→J
+
+If H≠­1
+Then
+­B2A→E
+AE²+BE+C→F
+B²-4AC→D
+If D≥0
+Then
+(­B-√(D))2A→I
+(­B+√(D))2A→J
+End:End
+
+
+EffÉcran
+Output(1,1,"f(x)="+Chn1)
+If H=1
+Then:Output(3,1,"α:"+versChaîne(E)+" β:"+versChaîne(F))
+Output(4,1,":"+versChaîne(D)+" x₁:"+versChaîne(I)+" x₂:"+versChaîne(J))
+Else:Output(3,1,"Polynome de degré "+versChaîne(dim(⌊COEF)-1))
+End
+
+Output(7,1,"f'(x):"+Chn2)
+If H=2
+Then:Output(8,1,"α:"+versChaîne(E)+" β:"+versChaîne(F))
+Output(9,1,":"+versChaîne(D)+" x₁:"+versChaîne(I)+" x₂:"+versChaîne(J))
+Else:If dim(⌊COEF)>1
+Then:Output(9,1,"Polynome de degré "+versChaîne(dim(⌊COEF)-2))
+Else:Output(9,1,"Polynome de degré 0")
+End:End
+Pause :EffÉcran
+
+Lbl OV
+If dim(⌊COEF)=0
+Then:0→I:DelVar [E]:DelVar [D]:DelVar ⌊COEF(I):DelVar Chn1:DelVar Chn2:0→E:0→F:0→D:0→I:0→J:0→A:0→B:0→C:0→V:0→H
+Disp "Progvar reset"
+End
