@@ -40,11 +40,11 @@ Pour installer le programme vous devrez avoir:
 - Appuyez sur entrée après chaque coefficient.
 - Terminez en entrant V
 Exemple:
-`
+```
 Pour 3x²+2
 Entrez 3 puis 0 puis 2 puis V
 Le 0 fait la différence entre 3x²+0x+2 et 3x+2
-`
+```
 
 Le programme va ensuite donner les polynomes et les racines s'il y en a un du second degré
 Le polynome est stocké dans Y1 et sa dérivée dans Y2
