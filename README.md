@@ -32,6 +32,26 @@ Pour installer le programme vous devrez avoir:
 
 - Soyez déçu car ce programme rendu compatible ne peut utiliser que des coefficients entiers
 
+
+## Utilisation
+
+
+- Entrez les coefficients dans l'ordre.
+- Appuyez sur entrée après chaque coefficient.
+- Terminez en entrant V
+Exemple:
+`
+Pour 3x²+2
+Entrez 3 puis 0 puis 2 puis V
+Le 0 fait la différence entre 3x²+0x+2 et 3x+2
+`
+
+Le programme va ensuite donner les polynomes et les racines s'il y en a un du second degré
+Le polynome est stocké dans Y1 et sa dérivée dans Y2
+
+**Pour éviter les problèmes d'affichage il est conseillé d'utiliser des coefficients entiers avec la version "Pour toutes les Ti"**
+
+
 ## Problèmes fréqents 
 
 1. Quel est ce 0 devant les expressions des fonctions ?
@@ -42,8 +62,11 @@ Pour installer le programme vous devrez avoir:
 - Si tu a une solution donne là [ici](https://github.com/James2Alex/Ti-Polynome)
 
 3. Les résulats c'est du caca.
-- Vérifie les coefficients que tu a entrés. Vérifie les calculs du programme [ici](https://github.com/James2Alex/Ti-Polynome).
+- Vérifie les coefficients que tu a entrés. 
+- Vérifie les calculs du programme [ici](https://github.com/James2Alex/Ti-Polynome).
 
+Si votre problème n'est pas dans la liste (et/ou qu'il est **très** embètant)
+Signalez-le [**ici**](https://gitreports.com/issue/James2Alex/Ti-Polynome)
 
 ### Support or Contact
 
