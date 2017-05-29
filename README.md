@@ -13,6 +13,8 @@ Pour installer le programme vous devrez avoir:
 - Un ordinateur
 - Un câble reliant les deux
 
+- _La volonté d'installer le programme_
+
 
 ### Pour les Ti-83 Premium CE 
 
@@ -23,14 +25,14 @@ Pour installer le programme vous devrez avoir:
 - Télécharger le [ficher du programme](https://github.com/James2Alex/Ti-Polynome/releases/download/1.0/POLY.8xp)
 - Charger le programme dans la calculatrice
 
-- Voilà,voilà!
+- _Voilà,voilà!_
 
 ### Pour toutes les Ti
 - Installez le logiciel [Ti connect CE](https://education.ti.com/fr/products/computer-software/ti%20connect%20ce%20sw) si vous avez une TI-83 Premium CE, TI-82 Advanced ou une TI-83 Plus.fr sinon installez le logiciel [Ti connect](https://education.ti.com/fr/products/computer-software/ti-connect-sw)
 - Télécharger le [ficher du programme](https://github.com/James2Alex/Ti-Polynome/releases/download/1.1compat/POLYcompat.8xp)
 - Charger le programme dans la calculatrice
 
-- Soyez déçu car ce programme rendu compatible ne peut utiliser que des coefficients entiers
+- _Soyez déçu car ce programme "compatible" ne peut utiliser que des coefficients entiers_
 
 
 ## Utilisation
