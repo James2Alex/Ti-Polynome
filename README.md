@@ -39,6 +39,7 @@ Pour installer le programme vous devrez avoir:
 - Entrez les coefficients dans l'ordre.
 - Appuyez sur entrée après chaque coefficient.
 - Terminez en entrant V
+
 Exemple:
 ```
 Pour 3x²+2
