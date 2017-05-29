@@ -74,4 +74,5 @@ Signalez-le [**ici**](https://gitreports.com/issue/James2Alex/Ti-Polynome)
 
 ### Support or Contact
 
-Having trouble with Pages? Check out our [documentation](https://help.github.com/categories/github-pages-basics/) or [contact support](https://github.com/contact) and we’ll help you sort it out.
+Problème d'utilisation? [Signalez le bug!](https://gitreports.com/issue/James2Alex/Ti-Polynome)
+Envie de participer? [Venez sur GitHub](https://github.com/James2Alex/Ti-Polynome)
