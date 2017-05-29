@@ -1,12 +1,23 @@
-## Ti-Polynome
+# Ti-Polynome
 
-Ce programme compatible avec toutes les Ti est  [editor on GitHub](https://github.com/James2Alex/Ti-Polynome/edit/master/README.md) to maintain and preview the content for your website in Markdown files.
+Ce programme compatible avec toutes les Ti permet d'entrer n'importe quel polynôme et donne sa dérivée.
+Si le polynome ou sa dérivée est du second degré il donne le maximum, l'absisse du maximum, de discriminant et les racines s'il y en a.
 
-Whenever you commit to this repository, GitHub Pages will run [Jekyll](https://jekyllrb.com/) to rebuild the pages in your site, from the content in your Markdown files.
+## Installation
 
-### Markdown
+Pour installer le programme vous devrez avoir:
+- La calcullatrice (évidemment)
+- Un ordinateur
+- Un câble reliant les deux
 
-Markdown is a lightweight and easy-to-use syntax for styling your writing. It includes conventions for
+### Pour les Ti-83 Premium CE 
+
+- Installez le logiciel [Ti connect CE](https://education.ti.com/fr/products/computer-software/ti%20connect%20ce%20sw)
+- Sauvegardez vos programmes et applications sur votre ordinateur
+- Téléchargez et effectuez la mise à jour en suivant [ce guide](https://education.ti.com/fr/product-resources/mise-a-jour-83-premium)
+- 
+
+
 
 ```markdown
 Syntax highlighted code block
