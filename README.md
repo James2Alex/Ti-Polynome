@@ -1,6 +1,6 @@
-## Welcome to GitHub Pages
+## Ti-Polynome
 
-You can use the [editor on GitHub](https://github.com/James2Alex/Ti-Polynome/edit/master/README.md) to maintain and preview the content for your website in Markdown files.
+Ce programme compatible avec toutes les Ti est  [editor on GitHub](https://github.com/James2Alex/Ti-Polynome/edit/master/README.md) to maintain and preview the content for your website in Markdown files.
 
 Whenever you commit to this repository, GitHub Pages will run [Jekyll](https://jekyllrb.com/) to rebuild the pages in your site, from the content in your Markdown files.
 
